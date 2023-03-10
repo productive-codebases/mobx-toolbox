@@ -1,5 +1,6 @@
 {
   "name": "@productive-codebases/mobx-toolbox",
+  "description": "MobX tooling for productive codebases.",
   "private": false,
   "version": "0.1.0-beta.0",
   "type": "module",
