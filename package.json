@@ -15,7 +15,7 @@
     "prepare": "husky install",
     "prepublishOnly": "npm run check:code && npm t && npm run build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest --run"
   },
   "husky": {
     "hooks": {
