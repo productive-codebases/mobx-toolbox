@@ -13,7 +13,7 @@
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm check:code && npm t && npm run build",
     "preview": "vite preview",
     "test": "vitest"
   },
@@ -42,10 +42,10 @@
   "module": "./dist/mobx-toolbox.es.js",
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "@productive-codebases/toolbox": "^1.0.1",
+    "@productive-codebases/toolbox": "^1.1.0-beta.2",
     "@types/node": "^18.7.6",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.34.0",
     "@vitejs/plugin-react": "^2.1.0",
@@ -71,8 +71,7 @@
     "vitest": "^0.29.2"
   },
   "peerDependencies": {
-    "react": "16.8.0 || >=17.x",
-    "react-dom": "16.8.0 || >=17.x"
+    "mobx": ">=6.8.0"
   },
   "repository": {
     "type": "git",

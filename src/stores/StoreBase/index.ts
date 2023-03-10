@@ -1,10 +1,10 @@
-import { IStoreBase, IStoreOptions } from '../types'
+import { IStoreBase, IStoreOptions, IStoreRoot } from '../types'
 
 /**
  * Base store for all stores.
  */
 export default class StoreBase<
-  TStoreRoot,
+  TStoreRoot extends IStoreRoot,
   TStoreOptions extends IStoreOptions = {}
 > implements IStoreBase
 {

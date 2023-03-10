@@ -25,7 +25,7 @@ export default defineConfig(configEnv => ({
   build: {
     lib: {
       entry: resolve('src', 'index.ts'),
-      name: 'ReactViteLibrary',
+      name: 'mobx-toolbox',
       formats: ['es', 'umd'],
       fileName: format => `mobx-toolbox.${format}.js`
     },

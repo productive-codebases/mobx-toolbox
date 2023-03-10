@@ -39,7 +39,7 @@ export function mergeFlags(...flags: IFlags[]): IFlags {
  * Useful when the global status depends of multiple flags of multiple stores.
  */
 export function mergeStoreFlags(
-  storesFlags: StoreFlags | StoreFlags[],
+  storesFlags: StoreFlags<any> | StoreFlags<any>[],
   overriddenFlags?: Partial<IFlags>
 ): IFlags {
   const defaultFlags: IFlags = {
