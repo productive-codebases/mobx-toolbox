@@ -13,7 +13,7 @@
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "preview": "vite preview",
     "test": "vitest"
   },
