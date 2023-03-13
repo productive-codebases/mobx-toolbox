@@ -1,18 +1,37 @@
 import { Logger } from '@productive-codebases/toolbox'
 
 /**
- * Describe the options that can be passed to each stores.
+ * Options that can be defined for each store.
  */
 export interface IStoreOptions {}
 
 /**
- * Implemented by all stores, allowing to have a common base interface.
+ * Base interface implemented by all stores.
  */
-export interface IStoreBase {}
+export interface IStoreBase<TStoreRoot> {
+  storeRoot: TStoreRoot
+}
+
+/**
+ * Base interface for stores environments.
+ */
+export interface IStoreEnvironment {
+  logger: Logger
+  localStorage: Storage
+}
+
+/**
+ * Record of all stores.
+ */
+export type IStores = Record<string, IStoreBase<any>>
 
 /**
  * StoreRoot interface, that your StoreRoot needs to implement.
  */
-export interface IStoreRoot {
-  logger: Logger
+export interface IStoreRoot<
+  TEnvironment extends IStoreEnvironment,
+  TStores extends IStores
+> {
+  environment: TEnvironment
+  stores: TStores
 }

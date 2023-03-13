@@ -1,5 +1,5 @@
 import { action, computed, makeObservable, observable } from 'mobx'
-import StoreBase from '../StoreBase'
+import AStoreBase from '../StoreBase'
 import { IStoreOptions, IStoreRoot } from '../types'
 import { IFlags } from './types'
 
@@ -11,8 +11,8 @@ export enum LoadingFlags {
 }
 
 export default class StoreFlags<
-  TStoreRoot extends IStoreRoot
-> extends StoreBase<TStoreRoot> {
+  TStoreRoot extends IStoreRoot<any, any>
+> extends AStoreBase<TStoreRoot> {
   @observable
   private $flags = LoadingFlags.isReady
 

@@ -1,14 +1,17 @@
-import { setupLogger } from '@productive-codebases/toolbox'
-import { IStoreRoot } from '../types'
+import { IStoreEnvironment, IStoreRoot, IStores } from '../types'
 
-const loggerMapping = {
-  stores: {
-    storeRoot: 'storeRoot'
+export default abstract class AStoreRoot<
+  TEnvironment extends IStoreEnvironment,
+  TStores extends IStores
+> implements IStoreRoot<TEnvironment, TStores>
+{
+  public environment: TEnvironment
+  public stores: TStores
+
+  constructor(environment: TEnvironment) {
+    this.environment = environment
+    this.stores = this._instanciateStores()
   }
-}
 
-const { newLogger } = setupLogger(loggerMapping)
-
-export default class StoreRoot implements IStoreRoot {
-  public logger = newLogger('stores')('storeRoot')
+  abstract _instanciateStores(): TStores
 }

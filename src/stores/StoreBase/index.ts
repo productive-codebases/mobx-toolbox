@@ -1,12 +1,18 @@
-import { IStoreBase, IStoreOptions, IStoreRoot } from '../types'
+import {
+  IStoreBase,
+  IStoreEnvironment,
+  IStoreOptions,
+  IStoreRoot,
+  IStores
+} from '../types'
 
 /**
  * Base store for all stores.
  */
-export default class StoreBase<
-  TStoreRoot extends IStoreRoot,
+export default abstract class AStoreBase<
+  TStoreRoot extends IStoreRoot<IStoreEnvironment, IStores>,
   TStoreOptions extends IStoreOptions = {}
-> implements IStoreBase
+> implements IStoreBase<TStoreRoot>
 {
   public storeRoot: TStoreRoot
   public options: TStoreOptions

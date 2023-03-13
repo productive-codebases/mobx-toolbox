@@ -1,12 +1,10 @@
-import './index.css'
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import App from './App'
+import AppSample from './AppSample'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <AppSample />
   </React.StrictMode>
 )
