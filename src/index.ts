@@ -2,9 +2,10 @@
  * Stores
  */
 
-export { default as StoreBase } from './stores/StoreBase'
+export { default as AbstractStoreBase } from './stores/StoreBase'
+export { default as AbstractStoreRoot } from './stores/StoreRoot'
+
 export { default as StoreFlags } from './stores/StoreFlags'
-export { default as StoreRoot } from './stores/StoreRoot'
 
 export * from './stores/types'
 
@@ -12,7 +13,7 @@ export * from './stores/types'
  * Environment
  */
 
-export { default as Environment } from './stores/Environment'
+export { default as AbstractEnvironment } from './stores/Environment'
 
 /**
  * Stubs

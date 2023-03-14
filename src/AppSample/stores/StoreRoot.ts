@@ -1,10 +1,10 @@
-import AStoreRoot from 'src/stores/StoreRoot'
+import AbstractStoreRoot from 'src/stores/StoreRoot'
 import Environment from './Environment'
 import StorePage1 from './StorePage1'
 import StorePage2 from './StorePage2'
 import { Stores } from './types'
 
-export default class StoreRoot extends AStoreRoot<Environment, Stores> {
+export default class StoreRoot extends AbstractStoreRoot<Environment, Stores> {
   _instanciateStores(): Stores {
     return {
       storePage1: new StorePage1(this, {

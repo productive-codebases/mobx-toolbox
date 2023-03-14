@@ -9,7 +9,7 @@ import {
 /**
  * Base store for all stores.
  */
-export default abstract class AStoreBase<
+export default abstract class AbstractStoreBase<
   TStoreRoot extends IStoreRoot<IStoreEnvironment, IStores>,
   TStoreOptions extends IStoreOptions = {}
 > implements IStoreBase<TStoreRoot>
