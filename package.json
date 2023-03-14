@@ -43,6 +43,7 @@
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@productive-codebases/toolbox": "^1.1.0-beta.2",
+    "@types/lodash.escaperegexp": "^4.1.7",
     "@types/node": "^18.7.6",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -59,6 +60,7 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "lodash.escaperegexp": "^4.1.2",
     "mobx": "^6.8.0",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
