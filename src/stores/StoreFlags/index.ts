@@ -1,5 +1,5 @@
 import { action, computed, makeObservable, observable } from 'mobx'
-import AbstractStoreBase from '../StoreBase'
+import AbstractStoreBase from '../AbstractStoreBase'
 import { IStoreOptions, IStoreRoot } from '../types'
 import { IFlags } from './types'
 

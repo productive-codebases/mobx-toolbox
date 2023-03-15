@@ -1,4 +1,4 @@
-import AbstractStoreBase from 'src/stores/StoreBase'
+import AbstractStoreBase from 'src/stores/AbstractStoreBase'
 import { IUser } from '../entities/users'
 import StoreRoot from './StoreRoot'
 

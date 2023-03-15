@@ -1,7 +1,7 @@
 import { assertUnreachableCase } from '@productive-codebases/toolbox'
 import escapeRegExp from 'lodash.escaperegexp'
 import { action, computed, makeObservable, observable } from 'mobx'
-import AbstractStoreBase from '../StoreBase'
+import AbstractStoreBase from '../AbstractStoreBase'
 import { IStoreRoot } from '../types'
 
 export type InputSearchTransformMethod = 'default' | 'greedy'

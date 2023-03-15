@@ -1,4 +1,4 @@
-import AbstractEnvironment from 'src/stores/Environment'
+import AbstractEnvironment from 'src/stores/AbstractEnvironment'
 import { users } from '../entities/users'
 
 export default class Environment extends AbstractEnvironment {
