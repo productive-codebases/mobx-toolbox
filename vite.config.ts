@@ -13,7 +13,8 @@ const { EsLinter, linterPlugin } = EsLint
 export default defineConfig(configEnv => ({
   plugins: [
     dts({
-      include: ['src']
+      include: ['src'],
+      exclude: ['src/AppSample']
     }),
     react(),
     tsConfigPaths(),
