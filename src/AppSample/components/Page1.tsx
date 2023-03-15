@@ -1,13 +1,12 @@
-import { useStores } from '@/hooks/useStores'
 import { useEffect, useState } from 'react'
 import { IUser } from '../entities/users'
-import { Stores } from '../stores/types'
+import { useAppStores } from '../hooks/useStores'
 
 export interface IPage1Props {}
 
 export default function Page1(props: IPage1Props) {
   const [users, setUsers] = useState<IUser[]>([])
-  const { storePage1 } = useStores<Stores>()
+  const { storePage1 } = useAppStores()
 
   useEffect(() => {
     storePage1.fetchUsers().then(users => {

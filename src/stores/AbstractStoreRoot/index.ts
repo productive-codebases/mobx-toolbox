@@ -5,7 +5,10 @@ export default abstract class AbstractStoreRoot<
   TStores extends IStores
 > implements IStoreRoot<TEnvironment, TStores>
 {
+  public storeRoot = this
+
   public environment: TEnvironment
+
   public stores: TStores
 
   constructor(environment: TEnvironment) {
