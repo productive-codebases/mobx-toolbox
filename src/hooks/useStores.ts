@@ -1,6 +1,5 @@
 import { IStoreEnvironment, IStoreRoot, IStores } from '..'
-import { ContextStores } from '@/context/ContextStores'
-import { useContext } from 'react'
+import { useMobxToolboxContext } from './useMobxToolboxContext'
 
 /**
  * Retrieve MobX stores from the context.
@@ -8,15 +7,15 @@ import { useContext } from 'react'
 export function useStores<TStores extends IStores>(): TStores & {
   storeRoot: IStoreRoot<IStoreEnvironment, TStores>
 } {
-  const value = useContext(ContextStores)
+  const context = useMobxToolboxContext()
 
-  if (!value.storeRoot) {
+  if (!context.storeRoot) {
     throw new Error('Root store has not been found')
   }
 
   const allStores = {
-    ...value.storeRoot.stores,
-    storeRoot: value.storeRoot
+    ...context.storeRoot.stores,
+    storeRoot: context.storeRoot
   }
 
   return allStores

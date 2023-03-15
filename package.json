@@ -35,8 +35,7 @@
     ".": {
       "import": "./dist/mobx-toolbox.es.js",
       "require": "./dist/mobx-toolbox.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "main": "./dist/mobx-toolbox.umd.js",
   "module": "./dist/mobx-toolbox.es.js",

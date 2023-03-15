@@ -30,6 +30,12 @@ export { useStores } from './hooks/useStores'
 export { ContextStores } from './context/ContextStores'
 
 /**
+ * Components
+ */
+
+export { default as MobxToolboxProvider } from './components/MobxToolboxProvider'
+
+/**
  * Stubs
  */
 
