@@ -73,6 +73,9 @@
     "vitest": "^0.29.2"
   },
   "peerDependencies": {
+    "@productive-codebases/toolbox": ">=1.1",
+    "react-dom": ">=18.2.0",
+    "react": ">=18.2.0",
     "mobx": ">=6.8.0"
   },
   "repository": {
