@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { IUser } from '../entities/users'
-import { useAppStores } from '../hooks/useStores'
+import { useAppStores } from '../hooks/useAppStores'
 
 export interface IPage1Props {}
 
