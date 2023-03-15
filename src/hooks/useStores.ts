@@ -1,6 +1,6 @@
+import { IStoreEnvironment, IStoreRoot, IStores } from '..'
+import { ContextStores } from '@/context/ContextStores'
 import { useContext } from 'react'
-import { ContextStores } from 'src/context/ContextStores'
-import { IStoreEnvironment, IStoreRoot, IStores } from 'src/stores/types'
 
 /**
  * Retrieve MobX stores from the context.

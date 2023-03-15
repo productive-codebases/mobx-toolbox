@@ -1,4 +1,4 @@
-import AbstractStoreBase from 'src/stores/AbstractStoreBase'
+import AbstractStoreBase from '@/stores/AbstractStoreBase'
 import StoreRoot from './StoreRoot'
 
 export interface IStorePageOptions {}

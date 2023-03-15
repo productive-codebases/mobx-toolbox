@@ -1,4 +1,4 @@
-import AbstractStoreRoot from 'src/stores/AbstractStoreRoot'
+import AbstractStoreRoot from '@/stores/AbstractStoreRoot'
 import Environment from './Environment'
 import StorePage1 from './StorePage1'
 import StorePage2 from './StorePage2'

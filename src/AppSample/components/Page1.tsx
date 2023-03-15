@@ -1,5 +1,5 @@
+import { useStores } from '@/hooks/useStores'
 import { useEffect, useState } from 'react'
-import { useStores } from 'src/hooks/useStores'
 import { IUser } from '../entities/users'
 import { Stores } from '../stores/types'
 
