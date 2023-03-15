@@ -7,6 +7,7 @@ export { default as AbstractStoreRoot } from './stores/AbstractStoreRoot'
 
 export { default as StoreFlags } from './stores/StoreFlags'
 export { default as StoreInputSearch } from './stores/StoreInputSearch'
+export * from './stores/StoreFlags/helpers'
 
 export * from './stores/types'
 
