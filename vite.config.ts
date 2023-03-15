@@ -16,7 +16,7 @@ export default defineConfig(configEnv => ({
     dts({
       include: ['src']
     }),
-    react(),
+    react({ jsxRuntime: 'classic' }),
     tsConfigPaths(),
     linterPlugin({
       include: ['./src}/**/*.{ts,tsx}'],
