@@ -16,7 +16,7 @@ export const devFlagsLoading: IFlags = {
  * Merge flags.
  * Useful when the global status depends of multiple flags of multiple stores.
  */
-export function mergeFlags(...flags: IFlags[]): IFlags {
+export function mergeFlags(flags: IFlags[]): IFlags {
   const defaultFlags: IFlags = {
     flags: true,
     isLoading: false,
