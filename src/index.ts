@@ -18,6 +18,12 @@ export * from './stores/types'
 export { default as AbstractEnvironment } from './stores/AbstractEnvironment'
 
 /**
+ * Hooks
+ */
+
+export { useStores } from './hooks/useStores'
+
+/**
  * Stubs
  */
 
