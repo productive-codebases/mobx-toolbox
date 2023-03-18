@@ -8,7 +8,7 @@ const storeRoot = new StoreRoot(environment)
 
 export default function AppSample() {
   return (
-    <MobxToolboxProvider storeRoot={storeRoot}>
+    <MobxToolboxProvider configuration={{ storeRoot }}>
       <Page1 />
     </MobxToolboxProvider>
   )
