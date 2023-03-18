@@ -1,14 +1,15 @@
-import { ContextStores } from '@/context/ContextStores'
-import { IStoreRoot } from '@/stores/types'
+import { ContextStores, IContextStores } from '@/context/ContextStores'
 
 export interface IMobxToolboxProviderProps {
-  storeRoot: IStoreRoot<any, any>
+  configuration: IContextStores
   children: React.ReactNode
 }
 
 export default function MobxToolboxProvider(props: IMobxToolboxProviderProps) {
   return (
-    <ContextStores.Provider value={{ storeRoot: props.storeRoot }}>
+    <ContextStores.Provider
+      value={{ storeRoot: props.configuration.storeRoot }}
+    >
       {props.children}
     </ContextStores.Provider>
   )
