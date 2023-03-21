@@ -1,8 +1,10 @@
+import { IStores } from '@/stores/types'
 import StorePage1 from './StorePage1'
 import StorePage2 from './StorePage2'
+import AppStoreRoot from './StoreRoot'
 
-export type AppStores = {
-  storeRoot: StorePage1['storeRoot']
+export interface IAppStores extends IStores<AppStoreRoot> {
+  storeRoot: AppStoreRoot
   storePage1: StorePage1
   storePage2: StorePage2
 }

@@ -1,4 +1,4 @@
 import { useStores } from '@/hooks/useStores'
-import { AppStores } from '../stores/types'
+import { IAppStores } from '../stores/types'
 
-export const useAppStores = useStores<AppStores>
+export const useAppStores = useStores<IAppStores>

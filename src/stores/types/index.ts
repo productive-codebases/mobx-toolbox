@@ -1,4 +1,5 @@
-import { Logger } from '@productive-codebases/toolbox'
+import { IEnvironment } from '../AbstractEnvironment/types'
+import AbstractStoreRoot from '../AbstractStoreRoot'
 
 /**
  * Options that can be defined for each store.
@@ -13,24 +14,19 @@ export interface IStoreBase<TStoreRoot> {
 }
 
 /**
- * Base interface for stores environments.
- */
-export interface IStoreEnvironment {
-  logger: Logger
-  localStorage: Storage
-}
-
-/**
  * Record of all stores.
  */
-export type IStores = Record<string, IStoreBase<any>>
+export interface IStores<TStoreRoot extends AbstractStoreRoot<any, any>>
+  extends Record<string, IStoreBase<TStoreRoot>> {
+  storeRoot: TStoreRoot
+}
 
 /**
  * StoreRoot interface, that your StoreRoot needs to implement.
  */
 export interface IStoreRoot<
-  TEnvironment extends IStoreEnvironment,
-  TStores extends IStores
+  TEnvironment extends IEnvironment<any>,
+  TStores extends IStores<any>
 > {
   environment: TEnvironment
   stores: TStores

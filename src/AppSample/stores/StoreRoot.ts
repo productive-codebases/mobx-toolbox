@@ -1,14 +1,17 @@
 import AbstractStoreRoot from '@/stores/AbstractStoreRoot'
-import Environment from './Environment'
+import AppEnvironment from './Environment'
 import StorePage1 from './StorePage1'
 import StorePage2 from './StorePage2'
-import { AppStores } from './types'
+import { IAppStores } from './types'
 
-export default class StoreRoot extends AbstractStoreRoot<
-  Environment,
-  AppStores
+export default class AppStoreRoot extends AbstractStoreRoot<
+  AppEnvironment,
+  IAppStores
 > {
-  _instanciateStores(): AppStores {
+  public logger =
+    this.storeRoot.environment.loggerSetup.newLogger('SampleApp')('stores')
+
+  _instanciateStores(): IAppStores {
     return {
       storeRoot: this,
       storePage1: new StorePage1(this, {

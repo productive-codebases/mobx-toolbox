@@ -1,16 +1,17 @@
 import AbstractStoreBase from '@/stores/AbstractStoreBase'
-import { IUser } from '../entities/users'
-import StoreRoot from './StoreRoot'
+import { IUser, users } from '../entities/users'
+import AppStoreRoot from './StoreRoot'
 
 export interface IStorePageOptions {
   storePage1Options: {}
 }
 
 export default class StorePage1 extends AbstractStoreBase<
-  StoreRoot,
+  AppStoreRoot,
   IStorePageOptions
 > {
   fetchUsers(): Promise<IUser[]> {
-    return this.storeRoot.environment.fetchClient.fetchUsers()
+    this.storeRoot.logger('debug')('Load users')
+    return this.storeRoot.environment.fetchClient.get().then(() => users)
   }
 }

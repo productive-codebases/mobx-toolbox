@@ -24,12 +24,6 @@ export { default as AbstractEnvironment } from './stores/AbstractEnvironment'
 export { useStores } from './hooks/useStores'
 
 /**
- * Contexts
- */
-
-export { ContextStores } from './context/ContextStores'
-
-/**
  * Components
  */
 

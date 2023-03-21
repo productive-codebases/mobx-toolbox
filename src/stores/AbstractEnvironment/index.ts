@@ -1,7 +1,15 @@
-import { newLogger } from '@/libs/newLogger'
-import { IStoreEnvironment } from '../types'
+import { IEnvironment, IEnvironmentConfiguration } from './types'
 
-export default abstract class AbstractEnvironment implements IStoreEnvironment {
-  logger = newLogger('mobx-toolbox')('stores')
-  localStorage = window.localStorage
+export default abstract class AbstractEnvironment<
+  TEnvironmentConfiguration extends IEnvironmentConfiguration
+> implements IEnvironment<TEnvironmentConfiguration>
+{
+  loggerSetup: TEnvironmentConfiguration['loggerSetup']
+
+  localStorage: TEnvironmentConfiguration['localStorage']
+
+  constructor(environmentConfiguration: TEnvironmentConfiguration) {
+    this.loggerSetup = environmentConfiguration.loggerSetup
+    this.localStorage = environmentConfiguration.localStorage
+  }
 }

@@ -1,12 +1,10 @@
-import { IStoreEnvironment, IStoreRoot, IStores } from '..'
+import { IStores } from '@/stores/types'
 import { useMobxToolboxContext } from './useMobxToolboxContext'
 
 /**
  * Retrieve MobX stores from the context.
  */
-export function useStores<TStores extends IStores>(): TStores & {
-  storeRoot: IStoreRoot<IStoreEnvironment, TStores>
-} {
+export function useStores<TStores extends IStores<any>>(): TStores {
   const context = useMobxToolboxContext()
 
   if (!context.storeRoot) {

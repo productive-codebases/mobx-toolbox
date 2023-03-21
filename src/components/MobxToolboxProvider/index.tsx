@@ -1,16 +1,21 @@
-import { ContextStores, IContextStores } from '@/context/ContextStores'
+import { IEnvironmentConfiguration } from '@/stores/AbstractEnvironment/types'
+import { ProviderContext } from './context'
+import { IMobxToolboxProviderProps, IProviderConfiguration } from './types'
 
-export interface IMobxToolboxProviderProps {
-  configuration: IContextStores
-  children: React.ReactNode
-}
-
-export default function MobxToolboxProvider(props: IMobxToolboxProviderProps) {
+export default function MobxToolboxProvider<
+  TEnvironmentConfiguration extends IEnvironmentConfiguration,
+  TProviderConfiguration extends IProviderConfiguration<TEnvironmentConfiguration>
+>(
+  props: IMobxToolboxProviderProps<
+    TEnvironmentConfiguration,
+    TProviderConfiguration
+  >
+) {
   return (
-    <ContextStores.Provider
+    <ProviderContext.Provider
       value={{ storeRoot: props.configuration.storeRoot }}
     >
       {props.children}
-    </ContextStores.Provider>
+    </ProviderContext.Provider>
   )
 }

@@ -1,8 +1,8 @@
+import { ProviderContext } from '@/components/MobxToolboxProvider/context'
 import { useContext } from 'react'
-import { ContextStores } from '..'
 
 export function useMobxToolboxContext() {
-  const context = useContext(ContextStores)
+  const context = useContext(ProviderContext)
 
   if (!context) {
     throw new Error(
