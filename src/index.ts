@@ -1,4 +1,10 @@
 /**
+ * Logger
+ */
+
+export { defaultLoggerSetup as mobxToolboxLoggerSetup } from './libs/logger'
+
+/**
  * Stores
  */
 
@@ -7,7 +13,11 @@ export { default as AbstractStoreRoot } from './stores/AbstractStoreRoot'
 
 export { default as StoreFlags } from './stores/StoreFlags'
 export { default as StoreInputSearch } from './stores/StoreInputSearch'
-export * from './stores/StoreFlags/helpers'
+export {
+  devFlagsLoading,
+  mergeFlags,
+  mergeStoreFlags
+} from './stores/StoreFlags/helpers'
 
 export * from './stores/types'
 
@@ -16,6 +26,8 @@ export * from './stores/types'
  */
 
 export { default as AbstractEnvironment } from './stores/AbstractEnvironment'
+
+export * from './stores/AbstractEnvironment/types'
 
 /**
  * Hooks

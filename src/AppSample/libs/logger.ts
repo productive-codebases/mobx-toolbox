@@ -1,8 +1,8 @@
-import { defaultLoggerMapping } from '@/libs/logger'
+import { defaultLoggerSetup } from '@/libs/logger'
 import { deepMerge, setupLogger } from '@productive-codebases/toolbox'
 
 const appLoggerMapping = deepMerge([
-  defaultLoggerMapping,
+  defaultLoggerSetup.loggerMapping,
   {
     SampleApp: {
       components: 'components',

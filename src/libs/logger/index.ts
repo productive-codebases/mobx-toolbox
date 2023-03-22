@@ -1,9 +1,9 @@
 import { setupLogger } from '@productive-codebases/toolbox'
 
-export const defaultLoggerMapping = {
+const defaultLoggerMapping = {
   MobXToolBox: {
     'stores/storeRoot': 'stores/storeRoot'
   }
 }
 
-export const defaultSetupLogger = setupLogger(defaultLoggerMapping)
+export const defaultLoggerSetup = setupLogger(defaultLoggerMapping)
