@@ -1,20 +1,17 @@
-import { IStores } from '@/stores/types'
+import { IMobxToolboxProviderConfiguration } from '@/types'
 import { useMobxToolboxContext } from './useMobxToolboxContext'
 
 /**
  * Retrieve MobX stores from the context.
  */
-export function useStores<TStores extends IStores<any>>(): TStores {
-  const context = useMobxToolboxContext()
+export function useStores<
+  TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
+>(): TMobxToolboxProviderConfiguration['storeRoot']['stores'] {
+  const context = useMobxToolboxContext<TMobxToolboxProviderConfiguration>()
 
   if (!context.storeRoot) {
     throw new Error('Root store has not been found')
   }
 
-  const allStores = {
-    ...context.storeRoot.stores,
-    storeRoot: context.storeRoot
-  }
-
-  return allStores
+  return context.storeRoot.stores
 }

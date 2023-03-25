@@ -1,10 +1,10 @@
-import { IEnvironment } from '../AbstractEnvironment/types'
-import { IStores, IStoreRoot } from '../types'
+import { IStoreBase, IStores } from '@/types'
+import { IEnvironment } from '../EnvironmentBase/types'
 
-export default abstract class AbstractStoreRoot<
+export default abstract class StoreRootBase<
   TEnvironment extends IEnvironment<any>,
   TStores extends IStores<any>
-> implements IStoreRoot<TEnvironment, TStores>
+> implements IStoreBase<any>
 {
   public storeRoot = this
 

@@ -1,8 +1,8 @@
 import { assertUnreachableCase } from '@productive-codebases/toolbox'
 import escapeRegExp from 'lodash.escaperegexp'
 import { action, computed, makeObservable, observable } from 'mobx'
-import AbstractStoreBase from '../AbstractStoreBase'
-import { IStoreRoot } from '../types'
+import StoreBase from '../StoreBase'
+import StoreRootBase from '../StoreRootBase'
 
 export type InputSearchTransformMethod = 'default' | 'greedy'
 
@@ -11,8 +11,8 @@ interface IStoreInputSearchOptions {
 }
 
 export default class StoreInputSearch<
-  TStoreRoot extends IStoreRoot<any, any>
-> extends AbstractStoreBase<TStoreRoot, IStoreInputSearchOptions> {
+  TStoreRoot extends StoreRootBase<any, any>
+> extends StoreBase<TStoreRoot, IStoreInputSearchOptions> {
   private $value = observable.box<string>('')
 
   private $focus = observable.box<boolean>(false)

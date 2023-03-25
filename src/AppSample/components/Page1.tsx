@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { IUser } from '../entities/users'
-import { useAppStores } from '../hooks/useAppStores'
+import { mobxToolboxHooks } from '../libs/mobxToolbox'
 
 export interface IPage1Props {}
 
 export default function Page1(props: IPage1Props) {
   const [users, setUsers] = useState<IUser[]>([])
-  const { storePage1 } = useAppStores()
+
+  const { storePage1 } = mobxToolboxHooks.useStores()
 
   useEffect(() => {
     storePage1.fetchUsers().then(users => {

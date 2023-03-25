@@ -1,6 +1,6 @@
 import { IEnvironment, IEnvironmentConfiguration } from './types'
 
-export default abstract class AbstractEnvironment<
+export default class EnvironmentBase<
   TEnvironmentConfiguration extends IEnvironmentConfiguration
 > implements IEnvironment<TEnvironmentConfiguration>
 {

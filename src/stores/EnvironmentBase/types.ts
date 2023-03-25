@@ -2,9 +2,7 @@ import { defaultLoggerSetup } from '@/libs/logger'
 import { LoggerSetup } from '@productive-codebases/toolbox'
 
 export interface IEnvironmentConfiguration<
-  TLoggerSetup extends LoggerSetup<
-    (typeof defaultLoggerSetup)['loggerMapping']
-  > = typeof defaultLoggerSetup
+  TLoggerSetup extends LoggerSetup<any> = typeof defaultLoggerSetup
 > {
   loggerSetup: TLoggerSetup
   localStorage: Storage

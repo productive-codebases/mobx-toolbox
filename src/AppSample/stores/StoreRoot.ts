@@ -1,10 +1,10 @@
-import AbstractStoreRoot from '@/stores/AbstractStoreRoot'
+import StoreRootBase from '@/stores/StoreRootBase'
 import AppEnvironment from './Environment'
 import StorePage1 from './StorePage1'
 import StorePage2 from './StorePage2'
 import { IAppStores } from './types'
 
-export default class AppStoreRoot extends AbstractStoreRoot<
+export default class AppStoreRoot extends StoreRootBase<
   AppEnvironment,
   IAppStores
 > {

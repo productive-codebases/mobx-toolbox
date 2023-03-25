@@ -1,9 +1,9 @@
-import AbstractStoreBase from '@/stores/AbstractStoreBase'
+import StoreBase from '@/stores/StoreBase'
 import AppStoreRoot from './StoreRoot'
 
 export interface IStorePageOptions {}
 
-export default class StorePage2 extends AbstractStoreBase<
+export default class StorePage2 extends StoreBase<
   AppStoreRoot,
   IStorePageOptions
 > {
