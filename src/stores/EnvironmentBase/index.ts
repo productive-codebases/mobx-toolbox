@@ -1,4 +1,4 @@
-import { IEnvironment, IEnvironmentConfiguration } from './types'
+import { IEnvironment, IEnvironmentConfiguration } from '@/types'
 
 export default class EnvironmentBase<
   TEnvironmentConfiguration extends IEnvironmentConfiguration

@@ -1,5 +1,5 @@
 import { appSetupLogger } from '@/AppSample/libs/logger'
-import { IEnvironmentConfiguration } from '@/stores/EnvironmentBase/types'
+import { IEnvironmentConfiguration } from '@/types'
 
 export const appEnvironmentConfiguration: IEnvironmentConfiguration<
   typeof appSetupLogger

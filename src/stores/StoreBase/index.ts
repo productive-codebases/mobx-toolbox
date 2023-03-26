@@ -1,8 +1,10 @@
-import { IStores, IStoreOptions, IStoreBase } from '@/types'
 import {
   IEnvironment,
-  IEnvironmentConfiguration
-} from '../EnvironmentBase/types'
+  IEnvironmentConfiguration,
+  IStoreBase,
+  IStoreOptions,
+  IStores
+} from '@/types'
 import StoreRootBase from '../StoreRootBase'
 
 /**

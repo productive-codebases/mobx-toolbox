@@ -1,5 +1,10 @@
+import { defaultLoggerSetup } from '@/libs/logger'
 import StoreRootBase from '@/stores/StoreRootBase'
 import { LoggerSetup } from '@productive-codebases/toolbox'
+
+/**
+ * Provider
+ */
 
 export interface IMobxToolboxProviderConfiguration<
   TStoreRoot extends StoreRootBase<any, any>
@@ -13,10 +18,27 @@ export interface IMobxToolboxProvider<
   storeRoot: TMobxToolboxProviderConfiguration['storeRoot']
 }
 
-export interface IEnvironment<TLoggerSetup = LoggerSetup<any>> {
+/**
+ * Environment
+ */
+
+export interface IEnvironmentConfiguration<
+  TLoggerSetup extends LoggerSetup<any> = typeof defaultLoggerSetup
+> {
   loggerSetup: TLoggerSetup
   localStorage: Storage
 }
+
+export interface IEnvironment<
+  TEnvironmentConfiguration extends IEnvironmentConfiguration
+> {
+  loggerSetup: TEnvironmentConfiguration['loggerSetup']
+  localStorage: TEnvironmentConfiguration['localStorage']
+}
+
+/**
+ * Stores
+ */
 
 export interface IStoreBase<TStoreRoot extends StoreRootBase<any, any>> {
   storeRoot: TStoreRoot
