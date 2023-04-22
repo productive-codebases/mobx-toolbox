@@ -1,27 +1,19 @@
 import react from '@vitejs/plugin-react'
-import { resolve } from 'node:path'
+import * as path from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import EsLint from 'vite-plugin-linter'
 import tsConfigPaths from 'vite-tsconfig-paths'
-import * as path from 'path'
-
 import * as packageJson from './package.json'
-
-const { EsLinter, linterPlugin } = EsLint
+import { resolve } from 'node:path'
 
 // https://vitejs.dev/config/
-export default defineConfig(configEnv => ({
+export default defineConfig({
   plugins: [
     dts({
       include: ['src']
     }),
-    react({ jsxRuntime: 'classic' }),
-    tsConfigPaths(),
-    linterPlugin({
-      include: ['./src}/**/*.{ts,tsx}'],
-      linters: [new EsLinter({ configEnv })]
-    })
+    react({ jsxRuntime: process.env.CI ? 'classic' : 'automatic' }),
+    tsConfigPaths()
   ],
   resolve: {
     alias: {
@@ -35,11 +27,11 @@ export default defineConfig(configEnv => ({
     lib: {
       entry: resolve('src', 'index.ts'),
       name: 'mobx-toolbox',
-      formats: ['es', 'umd'],
+      formats: ['es', 'cjs', 'umd'],
       fileName: format => `mobx-toolbox.${format}.js`
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)]
     }
   }
-}))
+})
