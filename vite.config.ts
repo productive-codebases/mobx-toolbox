@@ -12,7 +12,7 @@ export default defineConfig({
     dts({
       include: ['src']
     }),
-    react({ jsxRuntime: process.env.CI ? 'classic' : 'automatic' }),
+    react(),
     tsConfigPaths()
   ],
   resolve: {
