@@ -7,6 +7,9 @@ import { IMobxToolboxProviderConfiguration } from '@/types'
 const appEnvironment = new AppEnvironment(appEnvironmentConfiguration)
 const appStoreRoot = new AppStoreRoot(appEnvironment)
 
+// @ts-ignore
+window.ROOT_STORE = appStoreRoot
+
 export const appMobxToolboxProviderConfiguration: IMobxToolboxProviderConfiguration<AppStoreRoot> =
   {
     storeRoot: appStoreRoot
