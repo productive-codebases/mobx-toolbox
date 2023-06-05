@@ -4,7 +4,7 @@ import { useStores } from '@/hooks/useStores'
 import { IMobxToolboxProviderConfiguration } from '@/types'
 
 /**
- * Configure React Toolbox with a defined IProviderConfiguration configuration.
+ * Configure React Toolbox with a defined TMobxToolboxProviderConfiguration configuration.
  */
 export function configureMobxToolbox<
   TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
