@@ -1,20 +1,17 @@
 import { observer } from 'mobx-react-lite'
-import { useEffect } from 'react'
 import { mobxToolboxHooks } from '../libs/mobxToolbox'
-import { handlePage1OnLoad } from './handlers'
+import { handlePage1OnLoad2 } from './handlers'
 
 export interface IPage1Props {}
 
 function Page1(props: IPage1Props) {
   const { storePage1 } = mobxToolboxHooks.useStores()
 
-  useEffect(() => {
-    handlePage1OnLoad(storePage1)()
-  }, [])
-
   return (
     <div>
-      <button onClick={handlePage1OnLoad(storePage1)}>Reload users</button>
+      <button onClick={evt => handlePage1OnLoad2(storePage1)(evt)}>
+        Reload users
+      </button>
 
       <div>List of users:</div>
 
