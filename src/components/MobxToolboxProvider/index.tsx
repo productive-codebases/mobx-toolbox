@@ -1,5 +1,6 @@
 import { IMobxToolboxProviderConfiguration } from '@/types'
-import { ProviderContext } from './context'
+import { useMemo } from 'react'
+import { createContext } from './context'
 
 export interface IMobxToolboxProviderProps<
   TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
@@ -8,14 +9,25 @@ export interface IMobxToolboxProviderProps<
   children: React.ReactNode
 }
 
-export default function MobxToolboxProvider<
+/**
+ * Return the MobxToolboxProvider of `contextName`.
+ */
+export default function getMobxToolboxProvider<
   TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
->(props: IMobxToolboxProviderProps<TMobxToolboxProviderConfiguration>) {
-  return (
-    <ProviderContext.Provider
-      value={{ storeRoot: props.configuration.storeRoot }}
-    >
-      {props.children}
-    </ProviderContext.Provider>
-  )
+>(contextName: string) {
+  return function MobxToolboxProvider(
+    props: IMobxToolboxProviderProps<TMobxToolboxProviderConfiguration>
+  ) {
+    const ProviderContext = useMemo(() => {
+      return createContext(contextName)
+    }, [])
+
+    return (
+      <ProviderContext.Provider
+        value={{ storeRoot: props.configuration.storeRoot }}
+      >
+        {props.children}
+      </ProviderContext.Provider>
+    )
+  }
 }

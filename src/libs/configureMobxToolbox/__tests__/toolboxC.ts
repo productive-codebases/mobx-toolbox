@@ -1,36 +1,36 @@
-import { configureMobxToolbox } from '.'
+import { configureMobxToolbox } from '..'
 import EnvironmentBase from '@/stores/EnvironmentBase'
 import StoreRootBase from '@/stores/StoreRootBase'
 import { IMobxToolboxProviderConfiguration } from '@/types'
 import { createEnvironmentStub } from './createEnvironmentStub'
 
-class StoreRootB extends StoreRootBase<
+class StoreRootC extends StoreRootBase<
   EnvironmentBase<any>,
-  { storeRoot: StoreRootB }
+  { storeRoot: StoreRootC }
 > {
   public logger =
     this.storeRoot.environment.loggerSetup.newLogger('MobXToolBox')(
       'stores/storeRoot'
     )
 
-  _instanciateStores(): { storeRoot: StoreRootB } {
+  _instanciateStores(): { storeRoot: StoreRootC } {
     return {
       storeRoot: this
     }
   }
 
-  sayHelloB() {
-    return 'storeRootB'
+  sayHelloC() {
+    return 'storeRootC'
   }
 }
 
 const env = createEnvironmentStub()
-const storeRoot = new StoreRootB(env)
+const storeRoot = new StoreRootC(env)
 
-export const toolboxBConfiguration: IMobxToolboxProviderConfiguration<StoreRootB> =
+export const toolboxCConfiguration: IMobxToolboxProviderConfiguration<StoreRootC> =
   {
     storeRoot
   }
 
-export const { components: ToolboxBComponents, hooks: toolboxBHooks } =
-  configureMobxToolbox<typeof toolboxBConfiguration>()
+export const { components: ToolboxCComponents, hooks: toolboxCHooks } =
+  configureMobxToolbox<typeof toolboxCConfiguration>('contextC')

@@ -1,5 +1,5 @@
+import { defaultLoggerSetup } from '@/libs/logger'
 import EnvironmentBase from '@/stores/EnvironmentBase'
-import { defaultLoggerSetup } from '../logger'
 
 export function createEnvironmentStub() {
   return new EnvironmentBase({

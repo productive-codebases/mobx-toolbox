@@ -1,13 +1,18 @@
-import { ProviderContext } from '@/components/MobxToolboxProvider/context'
-import { useContext } from 'react'
+import { createContext } from '@/components/MobxToolboxProvider/context'
 import {
   IMobxToolboxProvider,
   IMobxToolboxProviderConfiguration
 } from '@/types'
+import { useContext } from 'react'
 
+/**
+ * Return the toolbox context.
+ */
 export function useMobxToolboxContext<
   TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
->() {
+>(contextName: string) {
+  const ProviderContext = createContext(contextName)
+
   const context = useContext(
     ProviderContext
   ) as IMobxToolboxProvider<TMobxToolboxProviderConfiguration>

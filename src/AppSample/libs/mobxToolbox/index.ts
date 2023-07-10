@@ -13,4 +13,4 @@ export const appMobxToolboxProviderConfiguration: IMobxToolboxProviderConfigurat
   }
 
 export const { components: MobxToolboxComponents, hooks: mobxToolboxHooks } =
-  configureMobxToolbox<typeof appMobxToolboxProviderConfiguration>()
+  configureMobxToolbox<typeof appMobxToolboxProviderConfiguration>('appContext')
