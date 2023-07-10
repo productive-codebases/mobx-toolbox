@@ -1,6 +1,6 @@
 import getMobxToolboxProvider from '@/components/MobxToolboxProvider'
-import { useMobxToolboxContext } from '@/hooks/useMobxToolboxContext'
-import { useStores } from '@/hooks/useStores'
+import { configureUseMobxToolboxContext } from '@/hooks/useMobxToolboxContext'
+import { configureUseStores } from '@/hooks/useStores'
 import { IMobxToolboxProviderConfiguration } from '@/types'
 
 /**
@@ -17,8 +17,11 @@ export function configureMobxToolbox<
     },
     hooks: {
       useMobxToolboxContext:
-        useMobxToolboxContext<TMobxToolboxProviderConfiguration>,
-      useStores: useStores<TMobxToolboxProviderConfiguration>(contextName)
+        configureUseMobxToolboxContext<TMobxToolboxProviderConfiguration>(
+          contextName
+        ),
+      useStores:
+        configureUseStores<TMobxToolboxProviderConfiguration>(contextName)
     }
   }
 }

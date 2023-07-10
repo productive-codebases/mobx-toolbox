@@ -8,20 +8,22 @@ import { useContext } from 'react'
 /**
  * Return the toolbox context.
  */
-export function useMobxToolboxContext<
+export function configureUseMobxToolboxContext<
   TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
 >(contextName: string) {
-  const ProviderContext = createContext(contextName)
+  return function useMobxToolboxContext(): IMobxToolboxProvider<TMobxToolboxProviderConfiguration> {
+    const ProviderContext = createContext(contextName)
 
-  const context = useContext(
-    ProviderContext
-  ) as IMobxToolboxProvider<TMobxToolboxProviderConfiguration>
+    const context = useContext(
+      ProviderContext
+    ) as IMobxToolboxProvider<TMobxToolboxProviderConfiguration>
 
-  if (!context) {
-    throw new Error(
-      'Missing MobxToolbox context. Wrap your top component by <MobxToolboxProvider />.'
-    )
+    if (!context) {
+      throw new Error(
+        'Missing MobxToolbox context. Wrap your top component by <MobxToolboxProvider />.'
+      )
+    }
+
+    return context
   }
-
-  return context
 }
