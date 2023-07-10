@@ -7,8 +7,8 @@ import { ToolboxAComponents, toolboxAConfiguration } from './toolboxA'
 import { ToolboxBComponents, toolboxBConfiguration } from './toolboxB'
 import { ToolboxCComponents, toolboxCConfiguration } from './toolboxC'
 
-describe('<Container />', () => {
-  it('should expose toolbox A in the context', async () => {
+describe('configureMobxToolbox', () => {
+  it('should expose toolbox A in the context A', async () => {
     const Component = (
       <ToolboxAComponents.MobxToolboxProvider
         configuration={toolboxAConfiguration}
@@ -22,7 +22,7 @@ describe('<Container />', () => {
     expect(screen.getByTestId('SayHelloA')).toHaveTextContent('StoreRootA')
   })
 
-  it('should expose toolbox B in the context', async () => {
+  it('should expose toolbox B in the context B', async () => {
     const Component = (
       <ToolboxBComponents.MobxToolboxProvider
         configuration={toolboxBConfiguration}
@@ -36,7 +36,7 @@ describe('<Container />', () => {
     expect(screen.getByTestId('SayHelloB')).toHaveTextContent('StoreRootB')
   })
 
-  it('should expose toolbox C in the context', async () => {
+  it('should expose toolbox C in the context C', async () => {
     const Component = (
       <ToolboxCComponents.MobxToolboxProvider
         configuration={toolboxCConfiguration}
@@ -50,7 +50,7 @@ describe('<Container />', () => {
     expect(screen.getByTestId('SayHelloC')).toHaveTextContent('StoreRootC')
   })
 
-  it('should expose both toolboxes in contextes', async () => {
+  it('should expose all toolboxes when used in all contextes', async () => {
     const Component = (
       <ToolboxCComponents.MobxToolboxProvider
         configuration={toolboxCConfiguration}

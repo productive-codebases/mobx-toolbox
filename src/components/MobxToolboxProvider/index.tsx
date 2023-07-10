@@ -12,7 +12,7 @@ export interface IMobxToolboxProviderProps<
 /**
  * Return the MobxToolboxProvider of `contextName`.
  */
-export default function getMobxToolboxProvider<
+export default function configureMobxToolboxProvider<
   TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
 >(contextName: string) {
   return function MobxToolboxProvider(
