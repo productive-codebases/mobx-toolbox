@@ -6,16 +6,16 @@ import { LoggerSetup } from '@productive-codebases/toolbox'
  * Provider
  */
 
-export interface IMobxToolboxProviderConfiguration<
+export interface IProviderConfiguration<
   TStoreRoot extends StoreRootBase<any, any>
 > {
   storeRoot: TStoreRoot
 }
 
-export interface IMobxToolboxProvider<
-  TMobxToolboxProviderConfiguration extends IMobxToolboxProviderConfiguration<any>
+export interface IProvider<
+  TProviderConfiguration extends IProviderConfiguration<any>
 > {
-  storeRoot: TMobxToolboxProviderConfiguration['storeRoot']
+  storeRoot: TProviderConfiguration['storeRoot']
 }
 
 /**

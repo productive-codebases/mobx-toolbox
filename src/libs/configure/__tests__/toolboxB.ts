@@ -1,7 +1,7 @@
-import { configureMobxToolbox } from '..'
+import { configure } from '..'
 import EnvironmentBase from '@/stores/EnvironmentBase'
 import StoreRootBase from '@/stores/StoreRootBase'
-import { IMobxToolboxProviderConfiguration } from '@/types'
+import { IProviderConfiguration } from '@/types'
 import { createEnvironmentStub } from './createEnvironmentStub'
 
 class StoreRootB extends StoreRootBase<
@@ -27,10 +27,9 @@ class StoreRootB extends StoreRootBase<
 const env = createEnvironmentStub()
 const storeRoot = new StoreRootB(env)
 
-export const toolboxBConfiguration: IMobxToolboxProviderConfiguration<StoreRootB> =
-  {
-    storeRoot
-  }
+export const toolboxBConfiguration: IProviderConfiguration<StoreRootB> = {
+  storeRoot
+}
 
 export const { components: ToolboxBComponents, hooks: toolboxBHooks } =
-  configureMobxToolbox<typeof toolboxBConfiguration>('contextB')
+  configure<typeof toolboxBConfiguration>('contextB')

@@ -7,14 +7,12 @@ import { ToolboxAComponents, toolboxAConfiguration } from './toolboxA'
 import { ToolboxBComponents, toolboxBConfiguration } from './toolboxB'
 import { ToolboxCComponents, toolboxCConfiguration } from './toolboxC'
 
-describe('configureMobxToolbox', () => {
+describe('configure', () => {
   it('should expose toolbox A in the context A', async () => {
     const Component = (
-      <ToolboxAComponents.MobxToolboxProvider
-        configuration={toolboxAConfiguration}
-      >
+      <ToolboxAComponents.Provider configuration={toolboxAConfiguration}>
         <SayHelloA />
-      </ToolboxAComponents.MobxToolboxProvider>
+      </ToolboxAComponents.Provider>
     )
 
     render(Component)
@@ -24,11 +22,9 @@ describe('configureMobxToolbox', () => {
 
   it('should expose toolbox B in the context B', async () => {
     const Component = (
-      <ToolboxBComponents.MobxToolboxProvider
-        configuration={toolboxBConfiguration}
-      >
+      <ToolboxBComponents.Provider configuration={toolboxBConfiguration}>
         <SayHelloB />
-      </ToolboxBComponents.MobxToolboxProvider>
+      </ToolboxBComponents.Provider>
     )
 
     render(Component)
@@ -38,11 +34,9 @@ describe('configureMobxToolbox', () => {
 
   it('should expose toolbox C in the context C', async () => {
     const Component = (
-      <ToolboxCComponents.MobxToolboxProvider
-        configuration={toolboxCConfiguration}
-      >
+      <ToolboxCComponents.Provider configuration={toolboxCConfiguration}>
         <SayHelloC />
-      </ToolboxCComponents.MobxToolboxProvider>
+      </ToolboxCComponents.Provider>
     )
 
     render(Component)
@@ -52,21 +46,15 @@ describe('configureMobxToolbox', () => {
 
   it('should expose all toolboxes when used in all contextes', async () => {
     const Component = (
-      <ToolboxCComponents.MobxToolboxProvider
-        configuration={toolboxCConfiguration}
-      >
-        <ToolboxAComponents.MobxToolboxProvider
-          configuration={toolboxAConfiguration}
-        >
-          <ToolboxBComponents.MobxToolboxProvider
-            configuration={toolboxBConfiguration}
-          >
+      <ToolboxCComponents.Provider configuration={toolboxCConfiguration}>
+        <ToolboxAComponents.Provider configuration={toolboxAConfiguration}>
+          <ToolboxBComponents.Provider configuration={toolboxBConfiguration}>
             <SayHelloA />
             <SayHelloB />
             <SayHelloC />
-          </ToolboxBComponents.MobxToolboxProvider>
-        </ToolboxAComponents.MobxToolboxProvider>
-      </ToolboxCComponents.MobxToolboxProvider>
+          </ToolboxBComponents.Provider>
+        </ToolboxAComponents.Provider>
+      </ToolboxCComponents.Provider>
     )
 
     render(Component)

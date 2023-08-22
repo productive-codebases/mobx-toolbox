@@ -2,13 +2,13 @@
  * Configurator
  */
 
-export { configureMobxToolbox } from './libs/configureMobxToolbox'
+export { configure } from './libs/configure'
 
 /**
  * Logger
  */
 
-export { defaultLoggerSetup as mobxToolboxLoggerSetup } from './libs/logger'
+export { defaultLoggerSetup } from './libs/logger'
 
 /**
  * Stores
@@ -18,9 +18,8 @@ export { default as StoreBase } from './stores/StoreBase'
 export { default as StoreRootBase } from './stores/StoreRootBase'
 
 export { default as StoreFlags } from './stores/StoreFlags'
-export { default as StoreInputSearch } from './stores/StoreInputSearch'
 export {
-  devFlagsLoading,
+  __flagsLoading,
   mergeFlags,
   mergeStoreFlags
 } from './stores/StoreFlags/helpers'
@@ -35,7 +34,7 @@ export { default as EnvironmentBase } from './stores/EnvironmentBase'
  * Components
  */
 
-export { default as MobxToolboxProvider } from './components/MobxToolboxProvider'
+export { default as Provider } from './components/Provider'
 
 /**
  * Types

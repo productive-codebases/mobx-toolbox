@@ -1,15 +1,13 @@
 import Page1 from './components/Page1'
 import {
-  appMobxToolboxProviderConfiguration,
+  appProviderConfiguration,
   MobxToolboxComponents
 } from './libs/mobxToolbox'
 
 export default function AppSample() {
   return (
-    <MobxToolboxComponents.MobxToolboxProvider
-      configuration={appMobxToolboxProviderConfiguration}
-    >
+    <MobxToolboxComponents.Provider configuration={appProviderConfiguration}>
       <Page1 />
-    </MobxToolboxComponents.MobxToolboxProvider>
+    </MobxToolboxComponents.Provider>
   )
 }

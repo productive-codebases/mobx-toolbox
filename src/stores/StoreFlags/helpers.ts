@@ -5,7 +5,7 @@ import { IFlags } from './types'
 /**
  * Useful to use when debugging loading state.
  */
-export const devFlagsLoading: IFlags = {
+export const __flagsLoading: IFlags = {
   flags: true,
   isLoading: true,
   isError: false,
