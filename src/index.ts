@@ -1,43 +1,23 @@
 /**
- * Configurator
+ * Base tooling and typings
  */
 
-export { configure } from './libs/configure'
+export { default as Environment } from './libs/Environment'
+
+export { default as StoreRoot } from './libs/stores/StoreRoot'
+
+export { default as Store } from './libs/stores/Store'
+export type { IStore, IStores } from './types'
 
 /**
- * Logger
+ * Stores helper
  */
 
-export { defaultLoggerSetup } from './libs/logger'
+// StoreFlags
 
-/**
- * Stores
- */
-
-export { default as StoreBase } from './stores/StoreBase'
-export { default as StoreRootBase } from './stores/StoreRootBase'
-
-export { default as StoreFlags } from './stores/StoreFlags'
+export { default as StoreFlags } from './libs/stores/StoreFlags'
 export {
   __flagsLoading,
   mergeFlags,
   mergeStoreFlags
-} from './stores/StoreFlags/helpers'
-
-/**
- * Environment
- */
-
-export { default as EnvironmentBase } from './stores/EnvironmentBase'
-
-/**
- * Components
- */
-
-export { default as Provider } from './components/Provider'
-
-/**
- * Types
- */
-
-export * from './types'
+} from './libs/stores/StoreFlags/helpers'

@@ -1,22 +1,14 @@
-import {
-  IEnvironment,
-  IEnvironmentConfiguration,
-  IStoreBase,
-  IStoreOptions,
-  IStores
-} from '@/types'
-import StoreRootBase from '../StoreRootBase'
+import Environment from '@/libs/Environment'
+import { IStore, IStores } from '@/types'
+import StoreRoot from '../StoreRoot'
 
 /**
  * Base store for all stores.
  */
-export default abstract class StoreBase<
-  TStoreRoot extends StoreRootBase<
-    IEnvironment<IEnvironmentConfiguration>,
-    IStores<any>
-  >,
-  TStoreOptions extends IStoreOptions = {}
-> implements IStoreBase<TStoreRoot>
+export default abstract class Store<
+  TStoreRoot extends StoreRoot<Environment<any>, IStores<any>>,
+  TStoreOptions extends object = {}
+> implements IStore<TStoreRoot>
 {
   public storeRoot: TStoreRoot
   public options: TStoreOptions
