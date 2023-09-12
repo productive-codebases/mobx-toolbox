@@ -1,6 +1,3 @@
-/// <reference types="vitest" />
-
-import react from '@vitejs/plugin-react'
 import * as path from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
@@ -10,13 +7,7 @@ import { resolve } from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    dts({
-      include: ['src']
-    }),
-    react(),
-    tsConfigPaths()
-  ],
+  plugins: [dts(), tsConfigPaths()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -29,16 +20,11 @@ export default defineConfig({
     lib: {
       entry: resolve('src', 'index.ts'),
       name: 'mobx-toolbox',
-      formats: ['es', 'cjs', 'umd'],
+      formats: ['es', 'cjs'],
       fileName: format => `mobx-toolbox.${format}.js`
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)]
     }
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/tests/setup.ts'
   }
 })

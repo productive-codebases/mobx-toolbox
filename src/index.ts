@@ -1,57 +1,23 @@
 /**
- * Configurator
+ * Base tooling and typings
  */
 
-export { configureMobxToolbox } from './libs/configureMobxToolbox'
+export { default as Environment } from './libs/Environment'
+
+export { default as StoreRoot } from './libs/stores/StoreRoot'
+
+export { default as Store } from './libs/stores/Store'
+export type { IStore, IStores } from './types'
 
 /**
- * Logger
+ * Stores helper
  */
 
-export { defaultLoggerSetup as mobxToolboxLoggerSetup } from './libs/logger'
+// StoreFlags
 
-/**
- * Stores
- */
-
-export { default as StoreBase } from './stores/StoreBase'
-export { default as StoreRootBase } from './stores/StoreRootBase'
-
-export { default as StoreFlags } from './stores/StoreFlags'
-export { default as StoreInputSearch } from './stores/StoreInputSearch'
+export { default as StoreFlags } from './libs/stores/StoreFlags'
 export {
-  devFlagsLoading,
+  __flagsLoading,
   mergeFlags,
   mergeStoreFlags
-} from './stores/StoreFlags/helpers'
-
-/**
- * Environment
- */
-
-export { default as EnvironmentBase } from './stores/EnvironmentBase'
-
-/**
- * Hooks
- */
-
-export { useMobxToolboxContext } from './hooks/useMobxToolboxContext'
-export { useStores } from './hooks/useStores'
-
-/**
- * Components
- */
-
-export { default as MobxToolboxProvider } from './components/MobxToolboxProvider'
-
-/**
- * Stubs
- */
-
-export { default as LocalStorageStub } from './stubs/LocalStorageStub'
-
-/**
- * Types
- */
-
-export * from './types'
+} from './libs/stores/StoreFlags/helpers'
