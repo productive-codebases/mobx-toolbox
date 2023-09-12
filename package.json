@@ -38,10 +38,12 @@
   "main": "./dist/mobx-toolbox.cjs.js",
   "module": "./dist/mobx-toolbox.es.js",
   "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@productive-codebases/toolbox": "^1.1.0-beta.14",
+    "mobx": "^6.10.2"
+  },
   "devDependencies": {
-    "@productive-codebases/toolbox": "^1.1.0-beta.8",
     "@types/jest": "^29.5.4",
-    "@types/lodash.escaperegexp": "^4.1.7",
     "@types/node": "^20.6.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
@@ -56,8 +58,6 @@
     "jest-junit": "^16.0.0",
     "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
-    "lodash.escaperegexp": "^4.1.2",
-    "mobx": "^6.10.2",
     "prettier": "^3.0.3",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2",
@@ -67,8 +67,7 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "peerDependencies": {
-    "@productive-codebases/toolbox": ">=1.1.0-beta.13",
-    "lodash.escaperegexp": ">=4.x",
+    "@productive-codebases/toolbox": ">=1.1.0-beta.14",
     "mobx": ">=6.8.0"
   },
   "repository": {
