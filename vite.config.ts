@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [dts(), tsConfigPaths()],
   resolve: {
     alias: {
+      '@index': path.resolve(__dirname, './src/index.ts'),
       '@': path.resolve(__dirname, './src')
     }
   },
