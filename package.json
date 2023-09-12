@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "prepublishOnly": "npm run check:code && npm t && npm run build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "husky": {
     "hooks": {
