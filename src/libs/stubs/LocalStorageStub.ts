@@ -4,7 +4,7 @@ import { Maybe } from '@productive-codebases/toolbox'
  * Basic reimplementation on LocalStorage, used in tests,
  * to avoid to use a JSDom environment.
  */
-export default class LocalStorageStub implements Storage {
+export class LocalStorageStub implements Storage {
   values: Map<string, Maybe<string>> = new Map()
 
   get length(): number {

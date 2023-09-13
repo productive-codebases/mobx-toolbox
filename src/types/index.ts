@@ -1,10 +1,10 @@
-import { StoreRoot } from '..'
+import { StoreRootBase } from '..'
 
 /** Base interface implemented by all stores. */
-export interface IStore<TStoreRoot extends StoreRoot<any, any>> {
-  storeRoot: TStoreRoot
+export interface IStoreBase<TStoreRootBase extends StoreRootBase<any, any>> {
+  storeRoot: TStoreRootBase
 }
 
 /** All stores instanciated via the root store */
-export interface IStores<TStoreRoot extends StoreRoot<any, any>>
-  extends Record<string, IStore<TStoreRoot>> {}
+export interface IStoreRecord<TStoreRootBase extends StoreRootBase<any, any>>
+  extends Record<string, IStoreBase<TStoreRootBase>> {}

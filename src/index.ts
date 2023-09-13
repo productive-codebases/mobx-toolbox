@@ -2,22 +2,24 @@
  * Base tooling and typings
  */
 
-export { default as Environment } from './libs/Environment'
+export { EnvironmentBase } from './libs/EnvironmentBase'
 
-export { default as StoreRoot } from './libs/stores/StoreRoot'
+export { StoreRootBase } from './libs/stores/StoreRootBase'
 
-export { default as Store } from './libs/stores/Store'
-export type { IStore, IStores } from './types'
+export { StoreBase } from './libs/stores/StoreBase'
+export type { IStoreBase, IStoreRecord } from './types'
 
 /**
  * Stores helper
  */
 
-// StoreFlags
+/* StoreFlags */
 
-export { default as StoreFlags } from './libs/stores/StoreFlags'
+export { StoreFlags } from './libs/stores/StoreFlags'
 export {
   __flagsLoading,
   mergeFlags,
   mergeStoreFlags
 } from './libs/stores/StoreFlags/helpers'
+
+export type { IFlags } from './libs/stores/StoreFlags/types'

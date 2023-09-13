@@ -1,4 +1,4 @@
-import { Environment } from '@index'
+import { EnvironmentBase } from '@index'
 
 // create an environment configuration
 const appEnvironmentConfiguration = {
@@ -6,6 +6,6 @@ const appEnvironmentConfiguration = {
 }
 
 // create the environment
-const appEnvironment = new Environment(appEnvironmentConfiguration)
+const appEnvironment = new EnvironmentBase(appEnvironmentConfiguration)
 
 export { appEnvironment }

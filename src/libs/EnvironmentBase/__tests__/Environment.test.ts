@@ -1,4 +1,4 @@
-import Environment from '..'
+import { EnvironmentBase } from '..'
 
 describe('Environment', () => {
   it('should allow passing a configuration', () => {
@@ -11,7 +11,7 @@ describe('Environment', () => {
       }
     }
 
-    const environment = new Environment(environmentConfiguration)
+    const environment = new EnvironmentBase(environmentConfiguration)
 
     expect(environment.configuration).toBe(environmentConfiguration)
   })

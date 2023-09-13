@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx'
-import Store from '../Store'
-import StoreRoot from '../StoreRoot'
+import { StoreBase } from '@/libs/stores/StoreBase'
+import { StoreRootBase } from '@/libs/stores/StoreRootBase'
 import { IFlags } from './types'
 
 export enum LoadingFlags {
@@ -10,9 +10,9 @@ export enum LoadingFlags {
   isForbidden = 1 << 2
 }
 
-export default class StoreFlags<
-  TStoreRoot extends StoreRoot<any, any>
-> extends Store<TStoreRoot> {
+export class StoreFlags<
+  TStoreRoot extends StoreRootBase<any, any>
+> extends StoreBase<TStoreRoot> {
   @observable
   private $flags = LoadingFlags.isReady
 

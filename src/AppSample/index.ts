@@ -1,11 +1,11 @@
 import { observe } from 'mobx'
 import { appEnvironment } from './environment'
-import AppStoreRoot from './stores/StoreRoot'
+import { StoreRootApp } from './stores/StoreRoot'
 
-const appStoreRoot = new AppStoreRoot(appEnvironment)
+const storeRootApp = new StoreRootApp(appEnvironment)
 
 // @ts-ignore
-window.__appStoreRoot = appStoreRoot
+window.__storeRootApp = storeRootApp
 
 function startApp() {
   const app = `
@@ -28,18 +28,18 @@ function startApp() {
     return
   }
 
-  const { storeA } = appStoreRoot.stores
+  const { storeA } = storeRootApp.stores
 
   observe(storeA.counter, () => {
     counterValueElement.innerHTML = storeA.counter.get().toString()
   })
 
   document.querySelector('#increment-button')?.addEventListener('click', () => {
-    appStoreRoot.stores.storeA.increment()
+    storeRootApp.stores.storeA.increment()
   })
 
   document.querySelector('#decrement-button')?.addEventListener('click', () => {
-    appStoreRoot.stores.storeA.decrement()
+    storeRootApp.stores.storeA.decrement()
   })
 }
 

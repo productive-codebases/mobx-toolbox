@@ -1,5 +1,5 @@
-import { Store } from '@index'
-import AppStoreRoot from './StoreRoot'
+import { StoreBase } from '@index'
+import { StoreRootApp } from './StoreRoot'
 
 // implement stores extending Store
-export default class StoreB extends Store<AppStoreRoot> {}
+export class StoreB extends StoreBase<StoreRootApp> {}

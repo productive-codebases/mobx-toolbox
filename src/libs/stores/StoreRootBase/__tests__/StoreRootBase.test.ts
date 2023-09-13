@@ -1,9 +1,9 @@
+import { StoreRootBase } from '..'
 import { EnvironmentBase } from '@/libs/EnvironmentBase'
 import { IStoreRecord } from '@/types'
-import { StoreBase } from '../../StoreBase'
-import { StoreRootBase } from '../../StoreRootBase'
+import { StoreBase } from '@/libs/stores/StoreBase'
 
-describe('StoreRoot', () => {
+describe('StoreRootBase', () => {
   /**
    * Typings
    */

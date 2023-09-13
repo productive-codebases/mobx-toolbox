@@ -1,9 +1,9 @@
-import { Store } from '@index'
+import { StoreBase } from '@index'
 import { action, IObservableValue, observable, runInAction } from 'mobx'
-import AppStoreRoot from './StoreRoot'
+import { StoreRootApp } from './StoreRoot'
 
 // implement stores extending Store
-export default class StoreA extends Store<AppStoreRoot> {
+export class StoreA extends StoreBase<StoreRootApp> {
   private $counter = observable.box(0)
 
   @action

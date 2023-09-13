@@ -1,13 +1,13 @@
-import { IStores } from '@index'
+import { IStoreRecord } from '@index'
 import { appEnvironment } from '../environment'
-import StoreA from '../stores/StoreA'
-import StoreB from '../stores/StoreB'
-import AppStoreRoot from '../stores/StoreRoot'
+import { StoreA } from '../stores/StoreA'
+import { StoreB } from '../stores/StoreB'
+import { StoreRootApp } from '../stores/StoreRoot'
 
-export interface IAppStores extends IStores<AppStoreRoot> {
-  storeRoot: AppStoreRoot
+export interface IStoreRecordApp extends IStoreRecord<StoreRootApp> {
+  storeRoot: StoreRootApp
   storeA: StoreA
   storeB: StoreB
 }
 
-export type AppEnvironment = typeof appEnvironment
+export type EnvironmentApp = typeof appEnvironment

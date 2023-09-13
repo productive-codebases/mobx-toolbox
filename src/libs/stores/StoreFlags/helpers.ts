@@ -1,4 +1,4 @@
-import StoreFlags from '.'
+import { StoreFlags } from '.'
 import { ensureArray } from '@productive-codebases/toolbox'
 import { IFlags } from './types'
 

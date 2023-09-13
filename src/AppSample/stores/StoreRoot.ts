@@ -1,14 +1,14 @@
-import { StoreRoot } from '@index'
-import { AppEnvironment, IAppStores } from '../types'
-import StoreA from './StoreA'
-import StoreB from './StoreB'
+import { StoreRootBase } from '@index'
+import { EnvironmentApp, IStoreRecordApp } from '../types'
+import { StoreA } from './StoreA'
+import { StoreB } from './StoreB'
 
 // implement a StoreRoot extending StoreRoot
-export default class AppStoreRoot extends StoreRoot<
-  AppEnvironment,
-  IAppStores
+export class StoreRootApp extends StoreRootBase<
+  EnvironmentApp,
+  IStoreRecordApp
 > {
-  _instanciateStores(): IAppStores {
+  _instanciateStores(): IStoreRecordApp {
     return {
       storeRoot: this,
       storeA: new StoreA(this, {}),
