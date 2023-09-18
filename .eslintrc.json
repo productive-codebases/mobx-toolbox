@@ -1,26 +1,23 @@
 {
   "env": {
-    "browser": true,
+    "browser": false,
     "es2021": true
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-      "tsx": true
+      "tsx": false
     },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": [
-    "react",
     "@typescript-eslint",
-    "react-hooks",
     "prettier"
   ],
   "rules": {
@@ -32,13 +29,7 @@
     "camelcase": "error",
     "no-alert": "error",
     "no-console": "error",
-    "no-duplicate-imports": "error",
-    "react-hooks/exhaustive-deps": "off",
-    "react/display-name": 0,
-    "react/no-unescaped-entities ": "off",
-    "react/no-unknown-property": "off",
-    "react/prop-types": 0,
-    "react/react-in-jsx-scope": "off"
+    "no-duplicate-imports": "error"
   },
   "settings": {
     "import/resolver": {

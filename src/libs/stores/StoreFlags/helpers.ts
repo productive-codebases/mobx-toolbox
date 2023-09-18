@@ -1,11 +1,11 @@
-import StoreFlags from '.'
+import { StoreFlags } from '.'
 import { ensureArray } from '@productive-codebases/toolbox'
 import { IFlags } from './types'
 
 /**
  * Useful to use when debugging loading state.
  */
-export const devFlagsLoading: IFlags = {
+export const __flagsLoading: IFlags = {
   flags: true,
   isLoading: true,
   isError: false,
@@ -16,7 +16,7 @@ export const devFlagsLoading: IFlags = {
  * Merge flags.
  * Useful when the global status depends of multiple flags of multiple stores.
  */
-export function mergeFlags(...flags: IFlags[]): IFlags {
+export function mergeFlags(flags: IFlags[]): IFlags {
   const defaultFlags: IFlags = {
     flags: true,
     isLoading: false,
@@ -39,7 +39,7 @@ export function mergeFlags(...flags: IFlags[]): IFlags {
  * Useful when the global status depends of multiple flags of multiple stores.
  */
 export function mergeStoreFlags(
-  storesFlags: StoreFlags | StoreFlags[],
+  storesFlags: StoreFlags<any> | StoreFlags<any>[],
   overriddenFlags?: Partial<IFlags>
 ): IFlags {
   const defaultFlags: IFlags = {

@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import { mergeFlags } from '../helpers'
 import { IFlags } from '../types'
 
@@ -18,7 +17,7 @@ describe('mergeFlags', () => {
       isForbidden: false
     }
 
-    expect(mergeFlags(flags1, flags2)).toEqual({
+    expect(mergeFlags([flags1, flags2])).toEqual({
       flags: true,
       isLoading: false,
       isError: false,
@@ -41,7 +40,7 @@ describe('mergeFlags', () => {
       isForbidden: true
     }
 
-    expect(mergeFlags(flags1, flags2)).toEqual({
+    expect(mergeFlags([flags1, flags2])).toEqual({
       flags: true,
       isLoading: true,
       isError: true,
@@ -64,7 +63,7 @@ describe('mergeFlags', () => {
       isForbidden: true
     }
 
-    expect(mergeFlags(flags1, flags2)).toEqual({
+    expect(mergeFlags([flags1, flags2])).toEqual({
       flags: true,
       isLoading: true,
       isError: true,
