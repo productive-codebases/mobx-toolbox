@@ -1,4 +1,3 @@
-import { observe } from 'mobx'
 import { appEnvironment } from './environment'
 import { StoreRootApp } from './stores/StoreRoot'
 
@@ -11,6 +10,7 @@ function startApp() {
   const app = `
   <button id="increment-button" type="button">Increment</button>
   <button id="decrement-button" type="button">Decrement</button>
+  <button id="set-error" type="button">Set error</button>
   <div id="counter-value">?</div>
 `
 
@@ -30,8 +30,12 @@ function startApp() {
 
   const { storeA } = storeRootApp.stores
 
-  observe(storeA.counter, () => {
-    counterValueElement.innerHTML = storeA.counter.get().toString()
+  storeA.counterEither.observeRight(() => {
+    counterValueElement.innerHTML = storeA.counter.toString()
+  })
+
+  storeA.counterEither.observeLeft(() => {
+    counterValueElement.innerHTML = storeA.error
   })
 
   document.querySelector('#increment-button')?.addEventListener('click', () => {
@@ -40,6 +44,10 @@ function startApp() {
 
   document.querySelector('#decrement-button')?.addEventListener('click', () => {
     storeRootApp.stores.storeA.decrement()
+  })
+
+  document.querySelector('#set-error')?.addEventListener('click', () => {
+    storeRootApp.stores.storeA.setError(`Error at ${new Date().toISOString()}`)
   })
 }
 
