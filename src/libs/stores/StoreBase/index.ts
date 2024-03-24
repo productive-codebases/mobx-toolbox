@@ -10,8 +10,12 @@ export class StoreBase<
   TStoreOptions extends object = {}
 > implements IStoreBase<TStoreRootBase>
 {
+  public readonly __storeBase = true
+
   public storeRoot: TStoreRootBase
-  public options: TStoreOptions
+
+  // store options, internal to the store - Prefer exposing explicit computed methods if you need to access to options.
+  protected options: TStoreOptions
 
   constructor(storeRoot: TStoreRootBase, options: TStoreOptions) {
     this.storeRoot = storeRoot

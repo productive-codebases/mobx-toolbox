@@ -39,7 +39,14 @@ describe('StoreBase', () => {
   // implement stores extending Store
   class StoreA extends StoreBase<StoreRootApp> {}
 
-  class StoreB extends StoreBase<StoreRootApp, IStoreBOptions> {}
+  class StoreB extends StoreBase<StoreRootApp, IStoreBOptions> {
+    /**
+     * Expose options for the needs of tests.
+     */
+    __options(): IStoreBOptions {
+      return this.options
+    }
+  }
 
   /**
    * StoreRoot implementation
@@ -72,7 +79,9 @@ describe('StoreBase', () => {
   })
   1
   it('should expose options', () => {
-    expect(storeRoot.stores.storeB.options.featureFlags.enableThing).toBe(true)
+    expect(storeRoot.stores.storeB.__options().featureFlags.enableThing).toBe(
+      true
+    )
   })
 
   it('should allow to set options', () => {
@@ -82,6 +91,8 @@ describe('StoreBase', () => {
       }
     })
 
-    expect(storeRoot.stores.storeB.options.featureFlags.enableThing).toBe(false)
+    expect(storeRoot.stores.storeB.__options().featureFlags.enableThing).toBe(
+      false
+    )
   })
 })
