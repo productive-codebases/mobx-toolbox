@@ -1,6 +1,6 @@
 {
   "name": "@productive-codebases/mobx-toolbox",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "MobX tooling for productive codebases.",
   "main": "./dist/mobx-toolbox.cjs.js",
   "module": "./dist/mobx-toolbox.es.js",
@@ -28,8 +28,7 @@
     "test": "jest --verbose"
   },
   "dependencies": {
-    "@productive-codebases/toolbox": ">=1.1.0-beta.14",
-    "mobx": "^6.12.1"
+    "@productive-codebases/toolbox": "^1.1.4"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -47,6 +46,7 @@
     "jest-junit": "^16.0.0",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
+    "mobx": "^6.8.0",
     "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "typescript": "^5.4.3",
@@ -56,7 +56,7 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "peerDependencies": {
-    "@productive-codebases/toolbox": ">=1.1.4"
+    "mobx": ">=6.8.0"
   },
   "husky": {
     "hooks": {
@@ -78,6 +78,11 @@
   },
   "homepage": "https://github.com/productive-codebases/mobx-toolbox#readme",
   "license": "MIT",
-  "keywords": ["mobx", "observable", "either", "toolbox"],
+  "keywords": [
+    "mobx",
+    "observable",
+    "either",
+    "toolbox"
+  ],
   "author": "Productive Codebases"
 }
